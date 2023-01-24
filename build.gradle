@@ -1,6 +1,8 @@
 // Copyright 2000-2021 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-apply plugin: 'java'
-
+plugins {
+  id 'java'
+  id 'pmd' version '6.39.0'
+}
 compileJava {
   sourceCompatibility '17'
   targetCompatibility '17'
@@ -23,4 +25,7 @@ jar {
   manifest {
     attributes 'Main-Class': 'org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler'
   }
+}
+ignoreFailures {
+  true
 }
